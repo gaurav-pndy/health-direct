@@ -14,7 +14,7 @@ const AppLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SideNavbar />
-      <main className=" xl:ml-80 mt-18 xl:mt-0 ">
+      <main className=" xl:ml-80 mt-20 xl:mt-0 ">
         <Outlet />
       </main>
     </div>
