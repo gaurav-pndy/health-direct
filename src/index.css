@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.custom-scrollbar {
+  scrollbar-color: #a2b0c5 transparent;
+  
+}
