@@ -20,6 +20,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BiSolidBellRing } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import i18n from "../utils/i18n";
+import NotificationBox from "./NotificationBox";
 
 const SideNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,9 +95,7 @@ const SideNavbar = () => {
           <img src="/HD.png" className="h-6" alt="Logo" />
         </div>
         <div className="flex gap-2 items-center">
-          <button className="p-2 bg-[#195e83] text-white rounded-full hover:bg-[#0f4562] transition-all duration-300  cursor-pointer">
-            <BiSolidBellRing size={20} />
-          </button>
+          <NotificationBox />
           <button className="p-2 bg-[#195e83] text-white rounded-full hover:bg-[#0f4562] transition-all duration-300  cursor-pointer">
             <MdOutlineLogout size={20} />
           </button>

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const DiscountCard = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-[#d7e5f5]  lg:col-span-3   p-6 rounded-3xl">
+    <div className="bg-[#d7e5f5]  lg:col-span-3 h-full lg:h-72 p-6 rounded-3xl">
       <div className="text-right flex flex-col justify-between  h-full">
         <h3
           className="text-4xl leading-8 font-bold text-[#195e83] mb-4"
