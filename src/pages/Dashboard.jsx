@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className=" p-4  md:p-6 md:px-10 bg-gray-50 ">
       {/* <DashboardHeader /> */}
 
-      <div className="md:grid  md:grid-cols-2 lg:grid-cols-7  gap-6">
+      <div className="md:grid space-y-6 md:space-y-0 md:grid-cols-2 lg:grid-cols-7  gap-6">
         {/* Left Column */}
 
         <div className="md:hidden ">
