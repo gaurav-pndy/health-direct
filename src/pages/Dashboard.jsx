@@ -9,8 +9,8 @@ import ServicesCard from "../components/DashboardComponents/ServicesCard";
 
 const Dashboard = () => {
   return (
-    <div className=" p-4  md:p-6 bg-gray-50 ">
-      <DashboardHeader />
+    <div className=" p-4  md:p-6 md:px-10 bg-gray-50 ">
+      {/* <DashboardHeader /> */}
 
       <div className="md:grid space-y-6 md:grid-cols-2 lg:grid-cols-7  gap-6">
         {/* Left Column */}

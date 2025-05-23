@@ -1,0 +1,59 @@
+{
+    "header":{
+        "welcome": "Welcome Mr/Mrs Place Holder",
+        "subtitle": "How're you feeling today?"
+    },
+    "side_navbar": {
+        "dashboard": "Dashboard",
+        "my_appointments": "My Appointments",
+        "my_payments": "My Payments",
+        "profile": "Profile"
+    },
+    "profile_card": {
+        "name": "Place Holder Name",
+        "age": "Age",
+        "phone": "Phone",
+        "email": "Email"
+    },
+    "payments_card": {
+        "title": "Your Payments",
+        "subtitle": "See your past payments",
+        "preview_button": "Click here to preview",
+        "previous_payments": "See Previous Payments",
+        "payment1": {
+            "title": "Pathologica Service",
+            "status": "Invoice generated"
+        }
+    },
+    "discounts_card": {
+        "text": " Avail <br /> 20% Discount <br /> on your first  <br /> Visit",
+        "button": "Book Now"
+    },
+    "appointments_card": {
+        "title": "Your Appointments",
+        "subtitle": "See all your appointments here",
+        "button": "See Previous Appointments",
+        "appointment1": {
+            "title": "Pathologica Service",
+            "date": "April 10, 2025"
+        },
+        "appointment2": {
+            "title": "Oncosurgery",
+            "date": "April 21, 2025"
+        },
+        "appointment3": {
+            "title": "Oncosurgery",
+            "date": "April 21, 2025"
+        }
+    },
+    "services_card": {
+        "title": "Order a Service",
+        "subtitle": "Select from the below services",
+        "service1": "Individual early diagnosis of the disease",
+        "service2": "Pathologica service",
+        "service3": "Molecular Coucil",
+        "service4": "Face-to-face and remote consultations",
+        "service5": "International Tumor Board",
+        "service6": "Expert Review of CT, MRI PET-CT"
+    }
+}
