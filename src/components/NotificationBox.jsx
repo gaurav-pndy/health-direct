@@ -3,6 +3,7 @@ import { BiSolidBellRing } from "react-icons/bi";
 import { FaRegUser, FaTimes } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 const NotificationBox = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,8 @@ const NotificationBox = () => {
   const importantCount = 1;
   const personalCount = 1;
 
-  // Close dropdown on outside click
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (bellRef.current && !bellRef.current.contains(e.target)) {
@@ -53,7 +55,7 @@ const NotificationBox = () => {
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
               <h4 className="font-semibold text-lg text-[#195e83] flex gap-2 items-center">
                 <BiSolidBellRing size={20} />
-                Notifications
+                {t("notif_box.title")}
               </h4>
               <button onClick={() => setIsOpen(false)}>
                 <FaTimes className="text-gray-500 hover:text-red-500 transition-colors" />
@@ -72,7 +74,7 @@ const NotificationBox = () => {
               >
                 {" "}
                 <AiOutlineExclamationCircle />
-                Important{" "}
+                {t("notif_box.important")}
                 <span className="ml-1 h-4 w-4 shrink-0 bg-red-500 text-white text-xs rounded-full ">
                   {importantCount}
                 </span>
@@ -86,7 +88,7 @@ const NotificationBox = () => {
                 }`}
               >
                 <FaRegUser />
-                Personal{" "}
+                {t("notif_box.personal")}
                 <span className="ml-1 h-4 w-4 shrink-0 bg-red-500 text-white text-xs rounded-full ">
                   {personalCount}
                 </span>

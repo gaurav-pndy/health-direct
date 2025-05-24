@@ -4,80 +4,59 @@ import { FaThList } from "react-icons/fa";
 import { IoGrid } from "react-icons/io5";
 import { BsFillGridFill } from "react-icons/bs";
 import { LuAlarmClockCheck } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
+import AppointmentListItem from "../components/AppointmentsComponents/AppointmentListItem";
+import AppointmentCard from "../components/AppointmentsComponents/AppointmentCard";
 
 const Appointments = () => {
-  const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
+  const [viewMode, setViewMode] = useState("grid");
+  const { t } = useTranslation();
 
   const appointments = [
     {
       id: 1,
-      doctor: "Dr. Mindubаev Eduard",
-      date: "April 10, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment1.doctor"),
+      date: t("appointments.appointment1.date"),
+      time: t("appointments.appointment1.time"),
     },
 
     {
       id: 2,
-      doctor: "Dr. Avtandil Babunashvili",
-      date: "March 21, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment2.doctor"),
+      date: t("appointments.appointment2.date"),
+      time: t("appointments.appointment2.time"),
     },
     {
       id: 3,
-      doctor: "Dr. Avtandil Babunashvili",
-      date: "June 12, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment3.doctor"),
+      date: t("appointments.appointment3.date"),
+      time: t("appointments.appointment3.time"),
     },
     {
       id: 4,
-      doctor: "Dr. Bahodur Kamolov",
-      date: "June 12, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment4.doctor"),
+      date: t("appointments.appointment4.date"),
+      time: t("appointments.appointment4.time"),
     },
     {
       id: 5,
-      doctor: "Dr. Vinod Raina",
-      date: "April 10, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment5.doctor"),
+      date: t("appointments.appointment5.date"),
+      time: t("appointments.appointment5.time"),
     },
     {
       id: 6,
-      doctor: "Dr. Ashok Baveja",
-      date: "March 21, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment6.doctor"),
+      date: t("appointments.appointment6.date"),
+      time: t("appointments.appointment6.time"),
     },
     {
       id: 7,
-      doctor: "Dr. Lokesh Kumar",
-      date: "March 21, 2025",
-      time: "10:00 AM",
+      doctor: t("appointments.appointment7.doctor"),
+      date: t("appointments.appointment7.date"),
+      time: t("appointments.appointment7.time"),
     },
   ];
-
-  const AppointmentCard = ({ appointment }) => (
-    <div className="bg-white p-4 md:p-6 rounded-xl  hover:shadow-md  transition-all duration-300 text-lg">
-      <h3 className=" font-bold text-[#12597f] mb-3">{appointment.doctor}</h3>
-      <div className="border-t border-gray-500 border-dashed pt-3">
-        <p className="text-[#c66aa8] font-bold  ">{appointment.date}</p>
-        <p className="text-[#c66aa8] font-bold ">{appointment.time}</p>
-      </div>
-    </div>
-  );
-
-  const AppointmentListItem = ({ appointment }) => (
-    <div className="bg-white p-4 md:p-6 rounded-xl  hover:shadow-md  transition-all duration-300 md:text-lg">
-      <div className="flex items-center justify-between">
-        <h3 className=" font-bold text-[#12597f]">{appointment.doctor}</h3>
-        <div className="text-right">
-          <p className="text-[#c66aa8] font-bold ">
-            {appointment.date} <span className="hidden md:inline">|</span>{" "}
-            <br className="md:hidden" />
-            {appointment.time}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div className="p-4 relative md:p-6 md:px-10  ">
@@ -87,9 +66,9 @@ const Appointments = () => {
           <div className="flex  items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-[#12597f] ">
-                Your Appointments
+                {t("appointments.title")}
               </h1>
-              <p className="text-[#12597f]">See all your appointments here</p>
+              <p className="text-[#12597f]">{t("appointments.subtitle")}</p>
             </div>
 
             <div className="flex  items-center space-x-3 md:space-x-6">
@@ -143,7 +122,7 @@ const Appointments = () => {
       {/* Order New Service Button */}
       <div className="fixed bottom-8 w-[90.5%] ">
         <button className="w-full  bg-gradient-to-r from-[#1a5e83] to-[#c56aa7] text-white py-4 rounded-2xl cursor-pointer text-xl  hover:from-[#c56aa7] hover:to-[#1a5e83] transition-all duration-300 font-bold shadow-lg">
-          Order New service
+          {t("appointments.button")}
         </button>
       </div>
 

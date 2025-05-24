@@ -55,5 +55,52 @@
         "service4": "Face-to-face and remote consultations",
         "service5": "International Tumor Board",
         "service6": "Expert Review of CT, MRI PET-CT"
+    },
+    "notif_box": {
+"title": "Notifications",
+"important": "Important",
+"personal": "Personal"
+    },
+    "appointments": {
+        "title": "Your Appointments",
+        "subtitle": "See all your appointments here",
+        "button": "Order New Service",
+        "appointment1": {
+            "doctor": "Dr. Mindubаev Eduard",
+            "date": "April 10, 2025",
+            "time": "10:00 AM"
+        },
+        "appointment2": {
+            "doctor": "Dr. Avtandil Babunashvili",
+            "date": "March 21, 2025",
+                        "time": "10:00 AM"
+
+        },
+        "appointment3": {
+            "doctor": "Dr. Avtandil Babunashvili",
+            "date": "June 12, 2025",
+                                    "time": "10:00 AM"
+
+        },
+        "appointment4": {
+            "doctor": "Dr. Bahodur Kamolov",
+            "date": "June 12, 2025",
+            "time": "10:00 AM"
+        },
+        "appointment5": {
+            "doctor": "Dr. Vinod Raina",
+            "date": "April 10, 2025",
+            "time": "10:00 AM"
+        },
+        "appointment6": {
+            "doctor": "Dr. Ashok Baveja",
+            "date": "March 21, 2025",
+            "time": "10:00 AM"
+        },
+        "appointment7": {
+            "doctor": "Dr. Lokesh Kumar",
+            "date": "March 21, 2025",
+            "time": "10:00 AM"
+        }
     }
 }
