@@ -102,5 +102,42 @@
             "date": "March 21, 2025",
             "time": "10:00 AM"
         }
+    },
+    "payments": {
+        "title": "My Payments",
+        "subtitle": "See all your payments here",
+        "button": "Make an Appointment",
+        "payment1": {
+            "service": "Pathologica Service",
+            "date": "April 10, 2025",
+            "time": "10:00 AM"
+        },
+        "payment2": {
+            "service": "Oncosurgery",
+            "date": "March 21, 2025",
+                        "time": "10:00 AM"
+
+        },
+        "payment3": {
+            "service": "Face-to-face and remote consultations",
+            "date": "June 12, 2025",
+                                    "time": "10:00 AM"
+
+        },
+        "payment4": {
+            "service": "Face-to-face and remote consultations",
+            "date": "June 12, 2025",
+            "time": "10:00 AM"
+        },
+        "payment5": {
+            "service": "Expert review of CT, MRI PET-CT",
+            "date": "May 17, 2025",
+            "time": "10:00 AM"
+        },
+        "payment6": {
+            "service": "International Tumor Board",
+            "date": "April 14, 2025",
+            "time": "10:00 AM"
+        }
     }
 }

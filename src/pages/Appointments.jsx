@@ -5,8 +5,9 @@ import { IoGrid } from "react-icons/io5";
 import { BsFillGridFill } from "react-icons/bs";
 import { LuAlarmClockCheck } from "react-icons/lu";
 import { useTranslation } from "react-i18next";
-import AppointmentListItem from "../components/AppointmentsComponents/AppointmentListItem";
-import AppointmentCard from "../components/AppointmentsComponents/AppointmentCard";
+
+import ListItem from "../components/ListItem";
+import CardItem from "../components/CardItem";
 
 const Appointments = () => {
   const [viewMode, setViewMode] = useState("grid");
@@ -100,20 +101,14 @@ const Appointments = () => {
             // Grid View
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {appointments.map((appointment) => (
-                <AppointmentCard
-                  key={appointment.id}
-                  appointment={appointment}
-                />
+                <CardItem key={appointment.id} item={appointment} />
               ))}
             </div>
           ) : (
             // List View
             <div className="space-y-4">
               {appointments.map((appointment) => (
-                <AppointmentListItem
-                  key={appointment.id}
-                  appointment={appointment}
-                />
+                <ListItem key={appointment.id} item={appointment} />
               ))}
             </div>
           )}
