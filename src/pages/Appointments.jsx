@@ -120,7 +120,7 @@ const Appointments = () => {
         </div>
       </div>
       {/* Order New Service Button */}
-      <div className="fixed bottom-8 w-[90.5%] ">
+      <div className="fixed bottom-8 w-[92%] md:w-[89.5%] lg:w-[92%] xl:w-[90.5%] ">
         <button className="w-full  bg-gradient-to-r from-[#1a5e83] to-[#c56aa7] text-white py-4 rounded-2xl cursor-pointer text-xl  hover:from-[#c56aa7] hover:to-[#1a5e83] transition-all duration-300 font-bold shadow-lg">
           {t("appointments.button")}
         </button>
