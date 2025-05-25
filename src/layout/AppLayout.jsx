@@ -4,6 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import SideNavbar from "../components/SideNavbar";
 import Header from "../components/Header";
+import "./AppLayout.css";
 
 const AppLayout = () => {
   const { pathname } = useLocation();
@@ -13,10 +14,10 @@ const AppLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="layout-container">
       <Header />
       <SideNavbar />
-      <main className=" xl:ml-16 mt-20 xl:mt-26 ">
+      <main className="layout-main">
         <Outlet />
       </main>
     </div>

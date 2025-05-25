@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { LuAlarmClockCheck } from "react-icons/lu";
 import { Link } from "react-router";
+import "./AppointmentsCard.css";
 
 const AppointmentsCard = () => {
   const { t } = useTranslation();
@@ -24,36 +25,29 @@ const AppointmentsCard = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-bl h-full lg:col-span-2 z-10 from-[#c669a5] to-[#ff7976] p-6 rounded-3xl text-white relative overflow-hidden">
-      <div className="absolute h-36 bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-      <div className="flex  justify-between mb-6">
+    <div className="appointment-card">
+      <div className="appointment-card-gradient" />
+      <div className="appointment-card-header">
         <div>
-          <h3 className="text-xl font-bold ">
-            {t("appointments_card.title")}{" "}
-          </h3>
-          <p className="text-pink-100 text-sm">
+          <h3 className="appointment-title">{t("appointments_card.title")}</h3>
+          <p className="appointment-subtitle">
             {t("appointments_card.subtitle")}
           </p>
         </div>
-        <LuAlarmClockCheck className="text-white text-[4.3rem]" />
+        <LuAlarmClockCheck className="appointment-icon" />
       </div>
 
-      <div className="space-y-3">
+      <div className="appointment-list">
         {appointments.map((appointment, index) => (
-          <div key={index} className="bg-[#f0f0f5] p-4 rounded-xl">
-            <h4 className="font-bold text-[#0c557c] mb-2">
-              {appointment.service}
-            </h4>
-
-            <p className="text-[#c66aa8]  font-bold border-t border-dashed border-[#0c557c] pt-2">
-              {appointment.date}
-            </p>
-            <p className="text-[#c66aa8] font-bold">{appointment.time}</p>
+          <div key={index} className="appointment-item">
+            <h4 className="appointment-service">{appointment.service}</h4>
+            <p className="appointment-date">{appointment.date}</p>
+            <p className="appointment-time">{appointment.time}</p>
           </div>
         ))}
 
         <Link to="/appointments">
-          <button className="bg-white absolute bottom-6 left-1/2 translate-x-[-50%] text-[#0c557c] px-4 cursor-pointer py-1 rounded-xl text-[0.7rem] font-bold hover:bg-gray-200 transition-all w-[60%] duration-300">
+          <button className="appointment-button">
             {t("appointments_card.button")}
           </button>
         </Link>

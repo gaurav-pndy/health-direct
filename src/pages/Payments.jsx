@@ -8,12 +8,13 @@ import { useTranslation } from "react-i18next";
 
 import ListItem from "../components/ListItem";
 import CardItem from "../components/CardItem";
+import "./Payments.css";
 
 const Payments = () => {
   const [viewMode, setViewMode] = useState("grid");
   const { t } = useTranslation();
 
-  const appointments = [
+  const payments = [
     {
       id: 1,
       doctor: t("payments.payment1.service"),
@@ -54,69 +55,62 @@ const Payments = () => {
   ];
 
   return (
-    <div className="p-4 relative md:p-6 md:px-10  ">
+    <div className="payments-wrapper">
       {/* Header */}
-      <div className="bg-[#f7f7f7] h-[calc(100vh-14rem)] md:h-[calc(100vh-15rem)] overflow-y-auto custom-scrollbar-2 p-4  md:p-8 md:px-10 rounded-3xl">
-        <div className=" mb-6 ">
-          <div className="flex  items-center justify-between">
+      <div className="payments-content custom-scrollbar-2">
+        <div className="payments-header">
+          <div className="payments-header-top">
             <div>
-              <h1 className="text-2xl font-bold text-[#12597f] ">
-                {t("payments.title")}
-              </h1>
-              <p className="text-[#12597f]">{t("payments.subtitle")}</p>
+              <h1 className="payments-title">{t("payments.title")}</h1>
+              <p className="payments-subtitle">{t("payments.subtitle")}</p>
             </div>
 
-            <div className="flex  items-center space-x-3 md:space-x-6">
-              {/* View Toggle Single Button */}
+            <div className="payments-actions">
               <button
                 onClick={() =>
                   setViewMode(viewMode === "grid" ? "list" : "grid")
                 }
-                className="p-3 rounded-full bg-[#c66aa8] text-white hover:bg-[#a15789] transition-all duration-300 cursor-pointer"
+                className="view-toggle-button"
               >
                 {viewMode === "grid" ? (
-                  <FaThList className="text-xl md:text-2xl" />
+                  <FaThList className="toggle-icon" />
                 ) : (
-                  <BsFillGridFill className="text-xl md:text-2xl" />
+                  <BsFillGridFill className="toggle-icon" />
                 )}
               </button>
 
-              {/* Check Circle Icon */}
-              <div className=" text-[#195e83] rounded-full">
-                <LuAlarmClockCheck className="text-5xl md:text-6xl" />
+              <div className="clock-icon">
+                <LuAlarmClockCheck className="clock-icon-size" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Appointments Content */}
-        <div className="my-4">
+        <div className="payments-body ">
           {viewMode === "grid" ? (
-            // Grid View
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {appointments.map((appointment) => (
-                <CardItem key={appointment.id} item={appointment} />
+            <div className="payments-grid">
+              {payments.map((payment) => (
+                <CardItem key={payment.id} item={payment} />
               ))}
             </div>
           ) : (
-            // List View
-            <div className="space-y-4">
-              {appointments.map((appointment) => (
-                <ListItem key={appointment.id} item={appointment} />
+            <div className="payments-list">
+              {payments.map((payment) => (
+                <ListItem key={payment.id} item={payment} />
               ))}
             </div>
           )}
         </div>
       </div>
+
       {/* Order New Service Button */}
-      <div className="fixed bottom-8 w-[92%] md:w-[89.5%] lg:w-[92%] xl:w-[90.5%] ">
-        <button className="w-full  bg-gradient-to-r from-[#1a5e83] to-[#c56aa7] text-white py-4 rounded-2xl cursor-pointer text-xl  hover:from-[#c56aa7] hover:to-[#1a5e83] transition-all duration-300 font-bold shadow-lg">
-          {t("payments.button")}
-        </button>
+      <div className="payments-button-wrapper">
+        <button className="payments-button">{t("payments.button")}</button>
       </div>
 
-      {/* Spacer for fixed button */}
-      <div className="h-20 "></div>
+      {/* Spacer */}
+      <div className="payments-spacer"></div>
     </div>
   );
 };

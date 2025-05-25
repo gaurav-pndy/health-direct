@@ -5,6 +5,7 @@ import { FaXRay } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LuDna, LuFilePlus2, LuUsers } from "react-icons/lu";
 import { RiMicroscopeFill } from "react-icons/ri";
+import "./ServicesCard.css";
 
 const ServicesCard = () => {
   const { t } = useTranslation();
@@ -49,32 +50,24 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br col-span-2 lg:col-span-5  from-[#c36aa7] to-[#1c5e83] p-6 rounded-3xl text-white">
-      <div className="flex  justify-between mb-6">
+    <div className="services-card">
+      <div className="services-header">
         <div>
-          <h3 className="text-xl font-bold mb-1">
-            {t("services_card.title")}{" "}
-          </h3>
-          <p className="text-purple-100 text-sm">
-            {t("services_card.subtitle")}
-          </p>
+          <h3 className="services-title">{t("services_card.title")}</h3>
+          <p className="services-subtitle">{t("services_card.subtitle")}</p>
         </div>
-        <LuFilePlus2 size={60} className="text-white" />
+        <LuFilePlus2 size={60} className="icon-right" />
       </div>
 
-      <div className="space-y-3 h-[26rem] overflow-y-auto custom-scrollbar pr-2">
+      <div className="services-list">
         {services.map((service, index) => {
           const IconComponent = service.icon;
           return (
-            <button
-              key={index}
-              className={`w-full flex items-center space-x-4 p-4 rounded-3xl bg-[#ffffff] transition-all    text-[#0c557c]
-              `}
-            >
-              <div className={`p-2 rounded-lg bg-[#195e83]`}>
-                <IconComponent size={20} className="text-white" />
+            <button key={index} className="service-button">
+              <div className="service-icon">
+                <IconComponent size={20} className="icon-white" />
               </div>
-              <span className=" text-left flex-1">{service.title}</span>
+              <span className="service-title">{service.title}</span>
             </button>
           );
         })}

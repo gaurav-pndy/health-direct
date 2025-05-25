@@ -1,0 +1,19 @@
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-main {
+  margin-top: 5rem; /* Equivalent to mt-20 (80px) */
+
+  /* Left margin only on xl screens */
+  margin-left: 0;
+}
+
+@media (min-width: 1280px) {
+  .layout-main {
+    margin-left: 4rem; /* Equivalent to ml-16 (64px) */
+    margin-top: 6.5rem; /* Equivalent to mt-26 (104px) */
+  }
+}

@@ -1,0 +1,50 @@
+.dashboard-wrapper {
+  padding: 1rem;
+  background-color: #f9fafb;
+}
+
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+     display: grid;
+  gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* DiscountCard mobile (shown only on small screens) */
+.discount-card-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .discount-card-mobile {
+    display: none;
+  }
+}
+
+/* DiscountCard desktop (hidden on small, shown on md+) */
+.discount-card-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .discount-card-desktop {
+    display: block;
+    grid-column: span 3;
+  }
+}

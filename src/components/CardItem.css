@@ -1,0 +1,33 @@
+.card-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .card-item {
+    padding: 1.5rem;
+  }
+}
+
+.card-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #12597f;
+  margin-bottom: 0.75rem;
+}
+
+.card-details {
+  border-top: 1px dashed #6b7280; /* Tailwind's gray-500 */
+  padding-top: 0.75rem;
+}
+
+.card-date-time {
+  color: #c66aa8;
+  font-weight: bold;
+}

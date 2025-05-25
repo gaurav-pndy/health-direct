@@ -6,28 +6,30 @@ import PaymentsCard from "../components/DashboardComponents/PaymentsCard";
 import DiscountCard from "../components/DashboardComponents/DiscountCard";
 import AppointmentsCard from "../components/DashboardComponents/AppointmentsCard";
 import ServicesCard from "../components/DashboardComponents/ServicesCard";
+import "./Dashboard.css"; // Assuming you have a CSS file for styles
 
 const Dashboard = () => {
   return (
-    <div className=" p-4  md:p-6 md:px-10 bg-gray-50 ">
+    <div className="dashboard-wrapper">
       {/* <DashboardHeader /> */}
 
-      <div className="md:grid space-y-6 md:space-y-0 md:grid-cols-2 lg:grid-cols-7  gap-6">
+      <div className="dashboard-grid">
         {/* Left Column */}
 
-        <div className="md:hidden ">
+        <div className="discount-card-mobile">
           <DiscountCard />
         </div>
+
         <ProfileCard />
         <PaymentsCard />
 
-        <div className="hidden md:block lg:col-span-3">
+        <div className="discount-card-desktop">
           <DiscountCard />
         </div>
+
         <AppointmentsCard />
 
         {/* Middle Column */}
-
         <ServicesCard />
 
         {/* Right Column */}

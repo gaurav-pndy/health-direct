@@ -21,6 +21,7 @@ import { BiSolidBellRing } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import i18n from "../utils/i18n";
 import NotificationBox from "./NotificationBox";
+import "./SideNavbar.css";
 
 const SideNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,16 +88,17 @@ const SideNavbar = () => {
   return (
     <>
       {/* Mobile Toggle Button */}
-      <div className="xl:hidden fixed flex items-center justify-between  top-0 left-0 z-20 bg-white border border-gray-200 rounded-md shadow w-full p-3 md:p-4">
-        <div className="flex gap-2 items-center">
-          <button onClick={() => setIsOpen(true)} className="p-2 ">
-            <FaBars className="text-3xl" />
+      {/* Mobile Toggle Button */}
+      <div className="mobile-toggle-header">
+        <div className="mobile-toggle-left">
+          <button onClick={() => setIsOpen(true)} className="mobile-toggle-btn">
+            <FaBars className="mobile-toggle-icon" />
           </button>
-          <img src="/HD.png" className="h-6" alt="Logo" />
+          <img src="/HD.png" className="mobile-logo" alt="Logo" />
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="mobile-toggle-right">
           <NotificationBox />
-          <button className="p-2 bg-[#195e83] text-white rounded-full hover:bg-[#0f4562] transition-all duration-300  cursor-pointer">
+          <button className="mobile-logout-btn">
             <MdOutlineLogout size={20} />
           </button>
         </div>
@@ -104,45 +106,32 @@ const SideNavbar = () => {
 
       {/* Backdrop for mobile menu */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 z-10 xl:hidden"
-          onClick={() => setIsOpen(false)}
-        />
+        <div className="mobile-backdrop" onClick={() => setIsOpen(false)} />
       )}
 
       {/* Sidebar (responsive handling) */}
-      <div
-        className={`
-    fixed z-20 top-0 lg:top-26 left-0 h-screen lg:h-[calc(100vh-6.5rem)]
-    bg-[#f7f7f7] border-r border-gray-200
-    flex flex-col flex-shrink-0
-    transition-all duration-300 ease-in-out
-    ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-    xl:translate-x-0 shadow-sm 
-    group w-screen xl:hover:w-80 xl:w-16 
-  `}
-      >
+      <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}>
         {/* Close button only on mobile */}
-        <div className="xl:hidden flex justify-end p-4">
-          <button className="p-2 " onClick={() => setIsOpen(false)}>
-            <FaTimes className="text-3xl" />
+        <div className="mobile-close-container">
+          <button className="mobile-close-btn" onClick={() => setIsOpen(false)}>
+            <FaTimes className="mobile-close-icon" />
           </button>
         </div>
 
         {/* Header */}
 
         {/* Navigation */}
-        <nav className="flex-1  overflow-x-hidden py-2 overflow-y-auto">
-          <div className=" px-4 pr-6 xl:px-2">
+        <nav className="sidebar-nav">
+          <div className="nav-container">
             <select
               value={selectedLang}
               onChange={(e) => changeLanguage(e.target.value)}
-              className="border xl:hidden  bg-[#195e83] hover:bg-[#0f4562] text-white rounded-lg px-3 float-right font-semibold py-1.5 transition-all duration-300 text-xl cursor-pointer mb-4"
+              className="language-select"
             >
-              <option className="font-quicksand" value="en">
+              <option className="language-option" value="en">
                 English
               </option>
-              <option className="font-quicksand" value="ru">
+              <option className="language-option" value="ru">
                 Русский
               </option>
             </select>
@@ -153,28 +142,25 @@ const SideNavbar = () => {
                   key={index}
                   to={item.src}
                   onClick={() => setIsOpen(false)}
-                  className="mb-5"
+                  className="nav-link"
                 >
                   <div>
                     <button
-                      className={`w-full flex items-center  px-3  mb-3 py-3 ${
-                        location.pathname === item.src && "bg-[#ebebec]"
-                      }  text-left hover:bg-[#ebebec] cursor-pointer rounded-lg transition-colors duration-300 group`}
+                      className={`nav-button ${
+                        location.pathname === item.src
+                          ? "nav-button-active"
+                          : ""
+                      }`}
                     >
-                      <div className="flex-shrink-0">
-                        <IconComponent
-                          className={`text-[#195e83] group-hover:scale-110 text-2xl transition-transform duration-200`}
-                        />
+                      <div className="nav-icon-container">
+                        <IconComponent className="nav-icon" />
                       </div>
                       <span
-                        className={`text-xl xl:text-base whitespace-nowrap font-medium transition-all duration-200
-    group-hover:inline lg:hidden ml-4
-    ${
-      location.pathname === item.src
-        ? "text-[#195e83] font-bold"
-        : "text-gray-700"
-    }
-  `}
+                        className={`nav-label ${
+                          location.pathname === item.src
+                            ? "nav-label-active"
+                            : "nav-label-inactive"
+                        }`}
                       >
                         {item.label}
                       </span>
@@ -187,8 +173,8 @@ const SideNavbar = () => {
         </nav>
 
         {/* Social Links */}
-        <div className="p-6 lg:-translate-x-36 group-hover:translate-x-0 transition-all duration-500 border-t border-gray-100">
-          <div className="flex justify-center space-x-3">
+        <div className="social-container">
+          <div className="social-links">
             {socialLinks.map((social, index) => {
               const IconComponent = social.icon;
               return (
@@ -197,9 +183,9 @@ const SideNavbar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${social.bgColor} p-1 rounded-lg text-white hover:scale-110 hover:shadow-lg transition-all duration-200 flex items-center justify-center`}
+                  className={`social-link ${social.bgColor}`}
                 >
-                  <IconComponent className="text-3xl" />
+                  <IconComponent className="social-icon" />
                 </a>
               );
             })}
