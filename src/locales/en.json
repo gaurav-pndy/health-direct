@@ -65,6 +65,10 @@
         "title": "Your Appointments",
         "subtitle": "See all your appointments here",
         "button": "Order New Service",
+         "search_placeholder": "Search an appointment...",
+          "no_results": "No appointments found.",
+     
+    "filter1_placeholder": "Filter by",
         "appointment1": {
             "doctor": "Dr. Mindubаev Eduard",
             "date": "April 10, 2025",
@@ -107,6 +111,10 @@
         "title": "My Payments",
         "subtitle": "See all your payments here",
         "button": "Make an Appointment",
+        "search_placeholder": "Search a payment...",
+          "no_results": "No payments found.",
+     
+    "filter1_placeholder": "Filter by",
         "payment1": {
             "service": "Pathologica Service",
             "date": "April 10, 2025",

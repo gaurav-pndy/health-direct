@@ -180,3 +180,41 @@
 .payments-spacer {
   height: 5rem;
 }
+
+
+.payments-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.payments-search {
+  flex: 1;
+  min-width: 20rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.payments-dropdown {
+  min-width: 15rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  /* cursor: not-allowed; */
+}
+
+@media (max-width: 640px) {
+.payments-search {
+   
+    min-width: 100%;
+  }
+.payments-dropdown {
+   
+    min-width: 100%;
+  }
+}
+

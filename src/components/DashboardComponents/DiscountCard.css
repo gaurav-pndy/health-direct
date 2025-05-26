@@ -3,15 +3,10 @@
   padding: 1.5rem;
   border-radius: 1.5rem;
   height: 100%;
-  margin-bottom: 1.5rem;
+
 }
 
-@media (min-width: 768px) {
 
-  .discounts-card {
-   margin-bottom: 0;
-  }
-}
 @media (min-width: 1024px) {
   .discounts-card {
     height: 18rem; /* ~lg:h-72 */
@@ -55,4 +50,40 @@
 
 .discounts-button:hover {
   background: linear-gradient(to right, #c16aa7, #1d5e84);
+}
+
+
+.discounts-swiper {
+  width: 100%;
+    height: 14rem;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+    margin-bottom: 1.5rem;
+    /* background-color: tomato; */
+}
+
+
+
+
+.discounts-full-image {
+  width: 100%;
+  height: 100%;
+    display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+
+  .discounts-swiper {
+   margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+.discounts-swiper   {
+    height: 18rem; /* ~lg:h-72 */
+   
+  }
 }

@@ -13,6 +13,7 @@ import CardItem from "../components/CardItem";
 const Appointments = () => {
   const [viewMode, setViewMode] = useState("grid");
   const { t } = useTranslation();
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ NEW
 
   const appointments = [
     {
@@ -60,6 +61,10 @@ const Appointments = () => {
     },
   ];
 
+  const filteredAppointments = appointments.filter((appointment) =>
+    appointment.doctor.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="appointments-wrapper">
       {/* Header */}
@@ -92,19 +97,37 @@ const Appointments = () => {
               </div>
             </div>
           </div>
+          {/* Filter & Search Placeholders */}
+          <div className="appointments-filters">
+            <input
+              type="text"
+              placeholder={t("appointments.search_placeholder")}
+              className="appointments-search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+
+            <select className="appointments-dropdown">
+              <option>{t("appointments.filter1_placeholder")}</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
         </div>
 
         {/* Appointments Content */}
-        <div className="appointments-body ">
-          {viewMode === "grid" ? (
+        <div className="appointments-body">
+          {filteredAppointments.length === 0 ? (
+            <p className="no-appointments">{t("appointments.no_results")}</p>
+          ) : viewMode === "grid" ? (
             <div className="appointments-grid">
-              {appointments.map((appointment) => (
+              {filteredAppointments.map((appointment) => (
                 <CardItem key={appointment.id} item={appointment} />
               ))}
             </div>
           ) : (
             <div className="appointments-list">
-              {appointments.map((appointment) => (
+              {filteredAppointments.map((appointment) => (
                 <ListItem key={appointment.id} item={appointment} />
               ))}
             </div>

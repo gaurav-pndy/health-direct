@@ -180,3 +180,40 @@
 .appointments-spacer {
   height: 5rem;
 }
+
+.appointments-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.appointments-search {
+  flex: 1;
+  min-width: 20rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.appointments-dropdown {
+  min-width: 15rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  /* cursor: not-allowed; */
+}
+
+@media (max-width: 640px) {
+.appointments-search {
+   
+    min-width: 100%;
+  }
+.appointments-dropdown {
+   
+    min-width: 100%;
+  }
+}
+

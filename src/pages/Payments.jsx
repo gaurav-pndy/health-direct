@@ -13,6 +13,7 @@ import "./Payments.css";
 const Payments = () => {
   const [viewMode, setViewMode] = useState("grid");
   const { t } = useTranslation();
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ NEW
 
   const payments = [
     {
@@ -54,6 +55,10 @@ const Payments = () => {
     },
   ];
 
+  const filteredPayments = payments.filter((payment) =>
+    payment.doctor.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="payments-wrapper">
       {/* Header */}
@@ -84,19 +89,36 @@ const Payments = () => {
               </div>
             </div>
           </div>
+          <div className="payments-filters">
+            <input
+              type="text"
+              placeholder={t("payments.search_placeholder")}
+              className="payments-search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+
+            <select className="payments-dropdown">
+              <option>{t("payments.filter1_placeholder")}</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
         </div>
 
         {/* Appointments Content */}
-        <div className="payments-body ">
-          {viewMode === "grid" ? (
+        <div className="payments-body">
+          {filteredPayments.length === 0 ? (
+            <p className="no-payments">{t("payments.no_results")}</p>
+          ) : viewMode === "grid" ? (
             <div className="payments-grid">
-              {payments.map((payment) => (
+              {filteredPayments.map((payment) => (
                 <CardItem key={payment.id} item={payment} />
               ))}
             </div>
           ) : (
             <div className="payments-list">
-              {payments.map((payment) => (
+              {filteredPayments.map((payment) => (
                 <ListItem key={payment.id} item={payment} />
               ))}
             </div>
