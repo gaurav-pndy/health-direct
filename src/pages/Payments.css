@@ -195,14 +195,16 @@
   min-width: 20rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+border: 2px solid #12597f;
+  color: #12597f;
 }
 
 .payments-dropdown {
   min-width: 15rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+border: 2px solid #12597f;
+  color: #12597f;
   background-color: #f9f9f9;
   /* cursor: not-allowed; */
 }
